@@ -5,6 +5,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roca+Two:wght@400;700;900&display=swap');
 
+* {
+  box-sizing: border-box;
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Remove the individual overflow-x lines and use this: */
+  overflow-x: hidden; 
+  position: relative;
+  -webkit-overflow-scrolling: touch; /* This enables smooth 'momentum' scrolling on iPhones */
+}
+
+
 :root {
   --cyan:        #00b8cc;
   --cyan-light:  #00d4e8;
@@ -31,7 +47,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth;  }
 
 body {
   background: var(--bg-mid);
@@ -39,7 +55,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.7;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: touch;
   cursor: auto;
 }
 
@@ -49,7 +65,7 @@ body {
 
 ::selection { background: var(--cyan-dim); color: var(--cyan-dark); }
 
-.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.container { max-width: 100%; margin: 0 auto; padding: 0 28px; }
 
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
@@ -90,4 +106,11 @@ img { max-width: 100%; display: block; }
 @keyframes slideTrack {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0 15px; /* Reduce padding for mobile so content has more room */
+  }
 }
