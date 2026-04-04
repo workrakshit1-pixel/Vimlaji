@@ -47,86 +47,65 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="about" style={{
-      position: 'relative', minHeight: '100vh',
-      display: 'flex', alignItems: 'center', overflow: 'hidden',
-      background: 'linear-gradient(145deg, #cff4f9 0%, #e2f8fc 30%, #edfafe 60%, #d4f3f9 100%)',
-    }}>
-      <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.85 }} />
+    <section
+      id="about"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[linear-gradient(145deg,#cff4f9_0%,#e2f8fc_30%,#edfafe_60%,#d4f3f9_100%)]"
+    >
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full opacity-[0.85]" />
 
-      {/* Colour blobs */}
-      <div style={{ position: 'absolute', top: '10%', right: '5%', width: 520, height: 520, background: 'radial-gradient(circle, rgba(0,184,204,0.14) 0%, transparent 70%)', borderRadius: '50%', animation: 'float 7s ease-in-out infinite' }} />
-      <div style={{ position: 'absolute', bottom: '10%', left: '3%', width: 360, height: 360, background: 'radial-gradient(circle, rgba(0,200,220,0.1) 0%, transparent 70%)', borderRadius: '50%', animation: 'float 9s ease-in-out infinite reverse' }} />
+      <div className="animate-float absolute right-[5%] top-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(0,184,204,0.14)_0%,transparent_70%)] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]" />
+      <div className="animate-float-reverse absolute bottom-[10%] left-[3%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(0,200,220,0.1)_0%,transparent_70%)] sm:h-[280px] sm:w-[280px] lg:h-[360px] lg:w-[360px]" />
 
-      {/* Spinning ring */}
-      <div style={{ position: 'absolute', top: '18%', right: '10%', width: 290, height: 290, border: '1.5px solid rgba(0,184,204,0.2)', borderRadius: '50%', animation: 'spin-slow 30s linear infinite' }}>
-        <div style={{ position: 'absolute', top: -5, left: '50%', width: 10, height: 10, background: 'var(--cyan)', borderRadius: '50%', transform: 'translateX(-50%)', boxShadow: '0 0 14px rgba(0,184,204,0.7)' }} />
+      <div className="animate-spin-slow absolute right-[10%] top-[18%] hidden h-[290px] w-[290px] rounded-full border-[1.5px] border-[rgba(0,184,204,0.2)] lg:block">
+        <div className="absolute left-1/2 top-[-5px] h-[10px] w-[10px] -translate-x-1/2 rounded-full bg-[var(--cyan)] shadow-[0_0_14px_rgba(0,184,204,0.7)]" />
       </div>
 
-      {/* Content */}
-      <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: 130, paddingBottom: 80 }}>
-        <div style={{ maxWidth: 700 }}>
-
-          {/* Main headline — Roca Two font */}
-          <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.6rem, 6vw, 5rem)',
-            fontWeight: 900, lineHeight: 1.08,
-            letterSpacing: '-1px',
-            animation: 'fadeInUp 0.9s ease 0.1s both',
-          }}>
-            <span style={{ display: 'block', color: '#0a3540' }}>The Only</span>
-            <span style={{
-              display: 'block',
-              background: 'linear-gradient(135deg, #00a8bc 0%, #007a90 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}>'Ji'</span>
-            <span style={{ display: 'block', color: '#0a3540' }}>our Bharat needs.</span>
+      <div className="app-container relative z-[2] pb-20 pt-36">
+        <div className="max-w-[700px]">
+          <h1 className="animate-[fadeInUp_0.9s_ease_0.1s_both] font-display text-[clamp(2.6rem,6vw,5rem)] font-black leading-[1.08] tracking-[-1px]">
+            <span className="block text-[#0a3540]">The Only</span>
+            <span className="block bg-[linear-gradient(135deg,#00a8bc_0%,#007a90_100%)] bg-clip-text text-transparent">
+              'Ji'
+            </span>
+            <span className="block text-[#0a3540]">our Bharat needs.</span>
           </h1>
 
-          {/* Sub heading */}
-          <p style={{
-            fontFamily: 'var(--font-body)', fontWeight: 400,
-            fontSize: 22, color: 'var(--cyan-dark)',
-            marginTop: 20, letterSpacing: '0.2px',
-            animation: 'fadeInUp 0.9s ease 0.25s both',
-          }}>Househelp in minutes.</p>
-
-          <p style={{
-            fontFamily: 'var(--font-body)', fontWeight: 300,
-            fontSize: 17, color: 'var(--text-muted)',
-            maxWidth: 480, marginTop: 16, lineHeight: 1.75,
-            animation: 'fadeInUp 0.9s ease 0.35s both',
-          }}>
-            Trained, verified house-help professionals — sweeping, mopping, Kitchen Prep, laundry & more — delivered to your doorstep in <strong style={{ color: 'var(--cyan-dark)', fontWeight: 600 }}>under 30 minutes</strong>.
+          <p className="animate-[fadeInUp_0.9s_ease_0.25s_both] mt-5 font-body text-[20px] font-normal tracking-[0.2px] text-[var(--cyan-dark)] sm:text-[22px]">
+            Househelp in minutes.
           </p>
 
-          {/* CTAs */}
-          <div style={{ display: 'flex', gap: 16, marginTop: 44, flexWrap: 'wrap', animation: 'fadeInUp 0.9s ease 0.5s both' }}>
-            <a href="https://wa.me/917973626242?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
-              target="_blank" rel="noopener noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'linear-gradient(135deg, #00b8cc, #0092a8)', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, padding: '14px 32px', borderRadius: 100, boxShadow: '0 8px 28px rgba(0,184,204,0.38)', transition: 'all 0.3s ease' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 14px 36px rgba(0,184,204,0.52)' }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,184,204,0.38)' }}
+          <p className="animate-[fadeInUp_0.9s_ease_0.35s_both] mt-4 max-w-[480px] font-body text-[16px] font-light leading-[1.75] text-[var(--text-muted)] sm:text-[17px]">
+            Trained, verified house-help professionals - sweeping, mopping, Kitchen Prep, laundry &
+            more - delivered to your doorstep in{' '}
+            <strong className="font-semibold text-[var(--cyan-dark)]">under 30 minutes</strong>.
+          </p>
+
+          <div className="animate-[fadeInUp_0.9s_ease_0.5s_both] mt-11 flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/917973626242?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 rounded-full bg-[linear-gradient(135deg,#00b8cc,#0092a8)] px-7 py-3 text-[15px] font-bold text-white shadow-[0_8px_28px_rgba(0,184,204,0.38)] transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_14px_36px_rgba(0,184,204,0.52)] sm:px-8 sm:py-[14px]"
             >
-              {/* WhatsApp icon */}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.44 1.28 4.9L2 22l5.32-1.26A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.28c-.2.56-1.16 1.08-1.6 1.14-.44.06-.84.22-2.82-.58-2.38-.96-3.9-3.38-4.02-3.54-.12-.16-.98-1.3-.98-2.48s.62-1.76.86-2c.22-.24.48-.3.64-.3h.46c.14 0 .34-.06.52.4l.74 1.96c.08.2.04.44-.08.62l-.4.5c-.12.14-.26.3-.1.58.16.28.7 1.14 1.5 1.84.94.84 1.72 1.1 2 1.22.28.12.44.1.6-.06l.5-.58c.16-.2.4-.26.62-.18l1.96.92c.28.12.46.18.5.28.04.14.04.7-.16 1.26z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.44 1.28 4.9L2 22l5.32-1.26A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.28c-.2.56-1.16 1.08-1.6 1.14-.44.06-.84.22-2.82-.58-2.38-.96-3.9-3.38-4.02-3.54-.12-.16-.98-1.3-.98-2.48s.62-1.76.86-2c.22-.24.48-.3.64-.3h.46c.14 0 .34-.06.52.4l.74 1.96c.08.2.04.44-.08.62l-.4.5c-.12.14-.26.3-.1.58.16.28.7 1.14 1.5 1.84.94.84 1.72 1.1 2 1.22.28.12.44.1.6-.06l.5-.58c.16-.2.4-.26.62-.18l1.96.92c.28.12.46.18.5.28.04.14.04.7-.16 1.26z" />
+              </svg>
               Book via WhatsApp
             </a>
 
-            <a href="#services"
-              style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.75)', border: '1.5px solid rgba(0,184,204,0.35)', color: 'var(--cyan-dark)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, padding: '14px 28px', borderRadius: 100, transition: 'all 0.3s ease', backdropFilter: 'blur(8px)' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,184,204,0.1)'; e.currentTarget.style.borderColor = 'rgba(0,184,204,0.55)' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.75)'; e.currentTarget.style.borderColor = 'rgba(0,184,204,0.35)' }}
-            >Our Services ↓</a>
+            <a
+              href="#services"
+              className="flex items-center gap-2 rounded-full border-[1.5px] border-[rgba(0,184,204,0.35)] bg-[rgba(255,255,255,0.75)] px-7 py-3 text-[15px] font-semibold text-[var(--cyan-dark)] backdrop-blur-[8px] transition-all duration-300 hover:border-[rgba(0,184,204,0.55)] hover:bg-[rgba(0,184,204,0.1)] sm:px-7 sm:py-[14px]"
+            >
+              Our Services ↓
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '2px', color: 'var(--text-dim)', textTransform: 'uppercase' }}>Scroll</div>
-        <div style={{ width: 1, height: 44, background: 'linear-gradient(to bottom, var(--cyan), transparent)', animation: 'float 2s ease-in-out infinite' }} />
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
+        <div className="font-mono text-[10px] uppercase tracking-[2px] text-[var(--text-dim)]">Scroll</div>
+        <div className="h-11 w-px animate-[float_2s_ease-in-out_infinite] bg-[linear-gradient(to_bottom,var(--cyan),transparent)]" />
       </div>
     </section>
   )

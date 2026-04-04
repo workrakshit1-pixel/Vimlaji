@@ -7,10 +7,15 @@ const items = [
 export default function Ticker() {
   const doubled = [...items, ...items]
   return (
-    <div style={{ overflow: 'hidden', background: 'linear-gradient(90deg, #00b8cc, #0099aa)', padding: '13px 0', borderTop: '1px solid rgba(0,184,204,0.2)', borderBottom: '1px solid rgba(0,184,204,0.2)', position: 'relative', zIndex: 2 }}>
-      <div style={{ display: 'flex', gap: 0, width: 'max-content', animation: 'ticker 30s linear infinite' }}>
+    <div className="relative z-[2] overflow-hidden border-y border-[rgba(0,184,204,0.2)] bg-[linear-gradient(90deg,#00b8cc,#0099aa)] py-[13px]">
+      <div className="flex w-max animate-ticker">
         {doubled.map((item, i) => (
-          <span key={i} style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, color: '#ffffff', whiteSpace: 'nowrap', padding: '0 32px', letterSpacing: '0.3px' }}>{item}</span>
+          <span
+            key={i}
+            className="whitespace-nowrap px-8 font-body text-[13px] font-medium tracking-[0.3px] text-white"
+          >
+            {item}
+          </span>
         ))}
       </div>
     </div>

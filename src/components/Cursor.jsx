@@ -40,8 +40,8 @@ export default function Cursor() {
 
   return (
     <div className="cursor">
-      <div ref={dotRef} className="cursor-dot" style={{ position: 'fixed' }} />
-      <div ref={ringRef} className="cursor-ring" style={{ position: 'fixed' }} />
+      <div ref={dotRef} className="cursor-dot fixed" />
+      <div ref={ringRef} className="cursor-ring fixed" />
     </div>
   )
 }
