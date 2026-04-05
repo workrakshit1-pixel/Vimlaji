@@ -88,7 +88,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://wa.me/91XXXXXXXXXX?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
+              href="https://wa.me/917973626242?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body rounded-full bg-[linear-gradient(135deg,#00b8cc,#0092a8)] px-4 py-[9px] text-xs font-bold tracking-[0.2px] text-white shadow-[0_4px_18px_rgba(0,184,204,0.35)] transition-all duration-300 hover:-translate-y-[1px] hover:shadow-[0_8px_28px_rgba(0,184,204,0.5)] sm:px-[26px] sm:py-[10px] sm:text-sm"
