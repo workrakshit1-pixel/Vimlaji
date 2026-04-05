@@ -1,5 +1,5 @@
 export default function HowToOrder() {
-  const chatbotScreenshot = '/chatbot-screenshot.png'
+  const chatbotScreenshot = 'public/screenshot.JPG'
 
   return (
     <section id="how-to-book" className="relative overflow-hidden bg-white py-[90px] lg:py-[110px]">
@@ -37,16 +37,16 @@ export default function HowToOrder() {
                     }}
                   />
                   <div className="hidden h-full flex-col items-center justify-center gap-2.5 bg-[#e8f8fb] p-5">
-                    <div className="text-4xl">💬</div>
+                    <div className="text-4xl"></div>
                     <div className="text-center font-mono text-[11px] tracking-[1px] text-[var(--cyan-dark)]">
-                      CHATBOT
+                      
                       <br />
-                      SCREENSHOT
+                      
                       <br />
-                      HERE
+                      
                     </div>
                     <div className="mt-1 text-center font-body text-[11px] text-[var(--text-dim)]">
-                      Replace /public/chatbot-screenshot.png
+                      
                     </div>
                   </div>
                 </div>
