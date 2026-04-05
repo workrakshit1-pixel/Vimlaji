@@ -11,7 +11,13 @@ import Footer from './components/Footer.jsx'
 export default function App() {
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.setAttribute('data-revealed', 'true')
+            observer.unobserve(e.target)
+          }
+        }),
       { threshold: 0.1 }
     )
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el))

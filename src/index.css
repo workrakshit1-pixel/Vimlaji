@@ -97,7 +97,7 @@
   transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
 }
 
-.reveal.visible {
+.reveal[data-revealed='true'] {
   opacity: 1;
   transform: translateY(0);
 }
