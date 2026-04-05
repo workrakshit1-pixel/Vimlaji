@@ -1,5 +1,5 @@
 export default function HowToOrder() {
-  const chatbotScreenshot = 'public/screenshot.JPG'
+  const chatbotScreenshot = 'public/screenshot.jpg'
 
   return (
     <section id="how-to-book" className="relative overflow-hidden bg-white py-[90px] lg:py-[110px]">
