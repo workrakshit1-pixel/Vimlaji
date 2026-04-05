@@ -100,7 +100,7 @@ export default function FAQs() {
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
+                    isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
                   <p className="px-4 pb-[22px] font-body text-[14.5px] font-light leading-[1.75] text-[var(--text-muted)] sm:px-6">
