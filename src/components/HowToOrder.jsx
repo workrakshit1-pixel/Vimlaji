@@ -1,5 +1,5 @@
 export default function HowToOrder() {
-  const chatbotScreenshot = 'public/screenshot.jpg'
+  const chatbotScreenshot = '/screenshot.jpg'
 
   return (
     <section id="how-to-book" className="relative overflow-hidden bg-white py-[90px] lg:py-[110px]">
@@ -24,9 +24,13 @@ export default function HowToOrder() {
         <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="reveal overflow-hidden rounded-3xl border-[1.5px] border-[rgba(0,184,204,0.28)] bg-[linear-gradient(135deg,rgba(0,184,204,0.07)_0%,rgba(0,146,168,0.03)_100%)] shadow-[0_4px_32px_rgba(0,184,204,0.1)]">
             <div className="flex justify-center bg-[linear-gradient(135deg,#b8ecf5_0%,#cdf4fa_100%)] px-4 pb-0 pt-9 sm:px-9">
-              <div className="w-[180px] rounded-t-[28px] bg-[#0a1a20] px-2 pb-0 pt-3 shadow-[0_16px_48px_rgba(0,0,0,0.25)]">
-                <div className="mx-auto mb-2.5 h-[6px] w-[60px] rounded-[3px] bg-[#1a2a30]" />
-                <div className="h-[280px] overflow-hidden rounded-t-2xl bg-[#f0f8fa]">
+              <div className="relative w-[210px] rounded-[38px] border border-[rgba(255,255,255,0.28)] bg-[linear-gradient(180deg,#1c1c20_0%,#0b0b0d_100%)] p-[7px] shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <div className="pointer-events-none absolute left-[-2px] top-[70px] h-8 w-[3px] rounded-r bg-[#2d2d32]" />
+                <div className="pointer-events-none absolute left-[-2px] top-[120px] h-10 w-[3px] rounded-r bg-[#2d2d32]" />
+                <div className="pointer-events-none absolute right-[-2px] top-[108px] h-12 w-[3px] rounded-l bg-[#2d2d32]" />
+
+                <div className="relative h-[430px] overflow-hidden rounded-[31px] bg-[#f0f8fa]">
+                  <div className="pointer-events-none absolute left-1/2 top-2.5 z-20 h-[26px] w-[104px] -translate-x-1/2 rounded-[16px] bg-black/90 shadow-[0_2px_6px_rgba(0,0,0,0.4)]" />
                   <img
                     src={chatbotScreenshot}
                     alt="VimlaJi AI Chatbot"
@@ -37,16 +41,16 @@ export default function HowToOrder() {
                     }}
                   />
                   <div className="hidden h-full flex-col items-center justify-center gap-2.5 bg-[#e8f8fb] p-5">
-                    <div className="text-4xl"></div>
+                    <div className="text-4xl">📱</div>
                     <div className="text-center font-mono text-[11px] tracking-[1px] text-[var(--cyan-dark)]">
-                      
+                      SCREENSHOT
                       <br />
-                      
+                      IMAGE
                       <br />
-                      
+                      HERE
                     </div>
                     <div className="mt-1 text-center font-body text-[11px] text-[var(--text-dim)]">
-                      
+                      Add /public/screenshot.jpg
                     </div>
                   </div>
                 </div>
