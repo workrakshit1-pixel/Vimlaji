@@ -115,7 +115,7 @@ export default function FAQs() {
         <div className="reveal mt-12 text-center lg:mt-14">
           <p className="mb-5 font-body text-base text-[var(--text-muted)]">Still have questions?</p>
           <a
-            href="https://wa.me/917973626242"
+            href="https://chat.whatsapp.com/DVq0fBr306J6czkIs6WD9a?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[linear-gradient(135deg,#00b8cc,#0092a8)] px-[30px] py-[13px] font-body text-sm font-bold text-white shadow-[0_6px_24px_rgba(0,184,204,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,184,204,0.5)]"

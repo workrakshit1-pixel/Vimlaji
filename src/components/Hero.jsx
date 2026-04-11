@@ -62,6 +62,13 @@ export default function Hero() {
 
       <div className="app-container relative z-[2] pb-20 pt-36">
         <div className="max-w-[700px]">
+          <div className="mb-4 inline-flex animate-[float_3.2s_ease-in-out_infinite] items-center gap-2 rounded-full border border-[rgba(0,184,204,0.35)] bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(220,246,251,0.88))] px-4 py-1.5 shadow-[0_6px_24px_rgba(0,184,204,0.2)] backdrop-blur-sm">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--cyan)]" />
+            <span className="font-mono text-[10px] font-semibold uppercase tracking-[1.9px] text-[var(--cyan-dark)]">
+              Services Coming Soon
+            </span>
+          </div>
+
           <h1 className="animate-[fadeInUp_0.9s_ease_0.1s_both] font-display text-[clamp(2.6rem,6vw,5rem)] font-black leading-[1.08] tracking-[-1px]">
             <span className="block text-[#0a3540]">The Only</span>
             <span className="block bg-[linear-gradient(135deg,#00a8bc_0%,#007a90_100%)] bg-clip-text text-transparent">

@@ -13,6 +13,16 @@ export default function Footer() {
       <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
     </svg>
   )
+  const LiIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6.94 8.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM5.35 9.8h3.18V19H5.35V9.8Zm5.08 0h3.05v1.25h.04c.42-.8 1.46-1.64 3-1.64 3.21 0 3.8 2.11 3.8 4.85V19h-3.18v-4.2c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22V19h-3.7V9.8Z" />
+    </svg>
+  )
+  const XIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m14.14 10.16 6.73-7.66h-1.6l-5.84 6.64L8.77 2.5H3.38l7.06 10.01L3.38 20.5h1.6l6.17-7.03 4.95 7.03h5.39l-7.35-10.34Zm-2.2 2.5-.72-1.01L5.5 3.64h2.45l4.62 6.5.72 1.01 6 8.44h-2.45l-4.9-6.93Z" />
+    </svg>
+  )
   const MailIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -81,6 +91,24 @@ export default function Footer() {
                 className={`${socialBtn} hover:border-transparent hover:bg-[linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)] hover:text-white`}
               >
                 <IgIcon />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vimla-ji-5ba9b9400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMmkn2KmXTPOsv7HiPmmI1Q%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className={`${socialBtn} hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white`}
+              >
+                <LiIcon />
+              </a>
+              <a
+                href="https://x.com/vimlaji.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter / X"
+                className={`${socialBtn} hover:border-[#111827] hover:bg-[#111827] hover:text-white`}
+              >
+                <XIcon />
               </a>
               <a
                 href="mailto:vimlajii18@gmail.com"
