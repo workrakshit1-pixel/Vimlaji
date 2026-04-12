@@ -212,7 +212,7 @@ export default function Footer() {
             {['Privacy Policy', 'Terms of Service'].map((item) => (
               <a
                 key={item}
-                href="#"
+                href="https://sites.google.com/view/vimlaji/privacy-policy?authuser=0"
                 className="font-mono text-[11px] text-[var(--text-dim)] transition-colors hover:text-[var(--cyan-dark)]"
               >
                 {item}

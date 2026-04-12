@@ -20,6 +20,10 @@ const faqs = [
     a: 'We offer sweeping, mopping, room cleaning, laundry, kitchen prep, bathroom cleaning, and dish washing. More services are being added regularly - follow us on Instagram or join our WhatsApp group to stay updated.',
   },
   {
+    q: 'Do you provide cleaning equipment and materials?',
+    a: 'No. All equipment and materials required for cleaning or any other service must be provided by the customer. VimlaJi professionals will use the tools and supplies available at your home.',
+  },
+  {
     q: 'How do I pay for the service?',
     a: 'After booking, you receive a secure payment link directly on WhatsApp. You can pay via UPI, debit/credit card, or net banking. Payment is collected before the helper is dispatched.',
   },
