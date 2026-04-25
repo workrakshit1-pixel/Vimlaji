@@ -60,12 +60,6 @@ export default function Services() {
           <div className="reveal mb-[14px] font-mono text-[11px] uppercase tracking-[3px] text-[var(--cyan-dark)]">
             What We Do
           </div>
-          <div className="reveal mb-4 inline-flex animate-[float_3.4s_ease-in-out_infinite] items-center gap-2 rounded-full border border-[rgba(0,184,204,0.28)] bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(224,247,252,0.9))] px-4 py-1.5 shadow-[0_6px_24px_rgba(0,184,204,0.16)]">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--cyan)]" />
-            <span className="font-mono text-[10px] font-semibold uppercase tracking-[1.8px] text-[var(--cyan-dark)]">
-              Coming Soon
-            </span>
-          </div>
           <h2 className="reveal reveal-delay-1 mb-[14px] font-display text-[clamp(2rem,4vw,3rem)] font-black leading-[1.1] tracking-[-0.5px] text-[#0a3540]">
             Services We{' '}
             <span className="bg-[linear-gradient(135deg,#00a8bc,#006f88)] bg-clip-text italic text-transparent">
