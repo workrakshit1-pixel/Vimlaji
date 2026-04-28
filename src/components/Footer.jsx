@@ -84,7 +84,7 @@ export default function Footer() {
                 <WaIcon />
               </a>
               <a
-                href="https://instagram.com/vimlaji.in"
+                href="https://www.instagram.com/vimlaji.official/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
@@ -131,7 +131,7 @@ export default function Footer() {
               { label: "FAQ's", href: '#faqs' },
               { label: 'Book Now', href: 'https://wa.me/917973626242' },
               { label: 'Join Community', href: 'https://chat.whatsapp.com/JH0LXCwLBA20LhtYDlwtKX' },
-              { label: 'Instagram', href: 'https://instagram.com/vimlaji.in' },
+              { label: 'Instagram', href: 'https://www.instagram.com/vimlaji.official/' },
             ].map(({ label, href }) => (
               <a
                 key={label}
