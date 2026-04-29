@@ -44,7 +44,30 @@ export default function Navbar() {
       } backdrop-blur-[18px]`}
     >
       <div className="app-container relative" ref={mobileMenuRef}>
-        <div className="flex h-[70px] items-center justify-between">
+        <div className="mx-[-1rem] mb-1.5 rounded-b-xl border-b border-[rgba(255,255,255,0.45)] bg-[linear-gradient(90deg,#009bb0,#00b8cc,#009bb0)] px-3 py-1.5 text-center shadow-[0_6px_18px_rgba(0,184,204,0.22)] sm:mx-[-1.5rem] sm:px-4 lg:mx-[-1.75rem]">
+          <p className="font-body text-[10px] font-semibold leading-[1.45] tracking-[0.15px] text-white sm:text-[11px]">
+            Important: old Instagram{' '}
+            <a
+              href="https://instagram.com/vimlaji.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/70 underline-offset-2 hover:text-[#eafcff]"
+            >
+              @vimlaji.in
+            </a>{' '}
+            was hacked. Please report and unfollow it. Follow new official account:{' '}
+            <a
+              href="https://instagram.com/vimlaji.official"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline decoration-white underline-offset-2 hover:text-[#eafcff]"
+            >
+              @vimlaji.official
+            </a>
+          </p>
+        </div>
+
+        <div className="flex h-[66px] items-center justify-between sm:h-[70px]">
           <a href="#" className="flex items-center gap-[11px]">
             <img
               src="/logo.jpg"
