@@ -93,7 +93,7 @@ export default function Footer() {
                 <IgIcon />
               </a>
               <a
-                href="https://www.linkedin.com/in/vimla-ji-5ba9b9400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMmkn2KmXTPOsv7HiPmmI1Q%3D%3D"
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="LinkedIn"
@@ -102,7 +102,7 @@ export default function Footer() {
                 <LiIcon />
               </a>
               <a
-                href="https://x.com/vimlaji.in"
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Twitter / X"
