@@ -1,111 +1,108 @@
-import { useEffect, useRef } from 'react'
+import StoreButtons from './StoreButtons.jsx'
+
+const backgroundScenes = [
+  '/app/services/sweeping_mopping.png',
+  '/app/services/utensils.png',
+  '/app/services/washing_clothes.png',
+  '/app/services/cooking_services.png',
+  '/app/services/dusting.png',
+  '/app/services/general_homehelp.png',
+]
+
+const heroSlides = [
+  '/app/banners/hero_daily_chores.png',
+  '/app/banners/hero_99_offer.png',
+  '/app/banners/hero_cooking_service_banner.png',
+]
+
+const liveMoments = [
+  ['09:00 AM', 'Sweeping & mopping', 'Slot booked'],
+  ['11:30 AM', 'Utensils support', 'Helper confirmed'],
+  ['02:00 PM', 'Cooking service', 'Now launched'],
+]
 
 export default function Hero() {
-  const canvasRef = useRef(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    let w = canvas.width = window.innerWidth
-    let h = canvas.height = window.innerHeight
-
-    const particles = Array.from({ length: 48 }, () => ({
-      x: Math.random() * w, y: Math.random() * h,
-      r: Math.random() * 1.8 + 0.4,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      opacity: Math.random() * 0.45 + 0.12,
-    }))
-
-    let raf
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h)
-      particles.forEach((p, i) => {
-        particles.slice(i + 1).forEach((q) => {
-          const dx = p.x - q.x, dy = p.y - q.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 150) {
-            ctx.beginPath()
-            ctx.strokeStyle = `rgba(0,184,204,${0.15 * (1 - dist / 150)})`
-            ctx.lineWidth = 0.8
-            ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke()
-          }
-        })
-        p.x += p.vx; p.y += p.vy
-        if (p.x < 0 || p.x > w) p.vx *= -1
-        if (p.y < 0 || p.y > h) p.vy *= -1
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,184,204,${p.opacity})`; ctx.fill()
-      })
-      raf = requestAnimationFrame(draw)
-    }
-    draw()
-    const onResize = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight }
-    window.addEventListener('resize', onResize)
-    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', onResize) }
-  }, [])
-
   return (
-    <section
-      id="about"
-      className="relative flex min-h-screen items-center overflow-hidden bg-[linear-gradient(145deg,#cff4f9_0%,#e2f8fc_30%,#edfafe_60%,#d4f3f9_100%)]"
-    >
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full opacity-[0.85]" />
-
-      <div className="animate-float absolute right-[5%] top-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(0,184,204,0.14)_0%,transparent_70%)] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]" />
-      <div className="animate-float-reverse absolute bottom-[10%] left-[3%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(0,200,220,0.1)_0%,transparent_70%)] sm:h-[280px] sm:w-[280px] lg:h-[360px] lg:w-[360px]" />
-
-      <div className="animate-spin-slow absolute right-[10%] top-[18%] hidden h-[290px] w-[290px] rounded-full border-[1.5px] border-[rgba(0,184,204,0.2)] lg:block">
-        <div className="absolute left-1/2 top-[-5px] h-[10px] w-[10px] -translate-x-1/2 rounded-full bg-[var(--cyan)] shadow-[0_0_14px_rgba(0,184,204,0.7)]" />
-      </div>
-
-      <div className="app-container relative z-[2] pb-20 pt-36">
-        <div className="max-w-[700px]">
-          <h1 className="animate-[fadeInUp_0.9s_ease_0.1s_both] font-display text-[clamp(2.6rem,6vw,5rem)] font-black leading-[1.08] tracking-[-1px]">
-            <span className="block text-[#0a3540]">The Only</span>
-            <span className="block bg-[linear-gradient(135deg,#00a8bc_0%,#007a90_100%)] bg-clip-text text-transparent">
-              'Ji'
-            </span>
-            <span className="block text-[#0a3540]">our Bharat needs.</span>
-          </h1>
-
-          <p className="animate-[fadeInUp_0.9s_ease_0.25s_both] mt-5 font-body text-[20px] font-normal tracking-[0.2px] text-[var(--cyan-dark)] sm:text-[22px]">
-            Househelp in minutes.
-          </p>
-
-          <p className="animate-[fadeInUp_0.9s_ease_0.35s_both] mt-4 max-w-[480px] font-body text-[16px] font-light leading-[1.75] text-[var(--text-muted)] sm:text-[17px]">
-            Trained, verified house-help professionals - sweeping, mopping, Kitchen Prep, laundry &
-            more - delivered to your doorstep in{' '}
-            <strong className="font-semibold text-[var(--cyan-dark)]">under 30 minutes</strong>.
-          </p>
-
-          <div className="animate-[fadeInUp_0.9s_ease_0.5s_both] mt-11 flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/917973626242?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 rounded-full bg-[linear-gradient(135deg,#00b8cc,#0092a8)] px-7 py-3 text-[15px] font-bold text-white shadow-[0_8px_28px_rgba(0,184,204,0.38)] transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_14px_36px_rgba(0,184,204,0.52)] sm:px-8 sm:py-[14px]"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.44 1.28 4.9L2 22l5.32-1.26A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.28c-.2.56-1.16 1.08-1.6 1.14-.44.06-.84.22-2.82-.58-2.38-.96-3.9-3.38-4.02-3.54-.12-.16-.98-1.3-.98-2.48s.62-1.76.86-2c.22-.24.48-.3.64-.3h.46c.14 0 .34-.06.52.4l.74 1.96c.08.2.04.44-.08.62l-.4.5c-.12.14-.26.3-.1.58.16.28.7 1.14 1.5 1.84.94.84 1.72 1.1 2 1.22.28.12.44.1.6-.06l.5-.58c.16-.2.4-.26.62-.18l1.96.92c.28.12.46.18.5.28.04.14.04.7-.16 1.26z" />
-              </svg>
-              Book via WhatsApp
-            </a>
-
-            <a
-              href="#services"
-              className="flex items-center gap-2 rounded-full border-[1.5px] border-[rgba(0,184,204,0.35)] bg-[rgba(255,255,255,0.75)] px-7 py-3 text-[15px] font-semibold text-[var(--cyan-dark)] backdrop-blur-[8px] transition-all duration-300 hover:border-[rgba(0,184,204,0.55)] hover:bg-[rgba(0,184,204,0.1)] sm:px-7 sm:py-[14px]"
-            >
-              Our Services ↓
-            </a>
-          </div>
+    <section id="about" className="relative isolate min-h-screen overflow-hidden bg-[#eefdff] pt-[104px] text-[#082f38] sm:pt-[124px]">
+      <div className="living-home-backdrop absolute inset-0 -z-20">
+        <div className="living-track living-track-one">
+          {[...backgroundScenes, ...backgroundScenes].map((src, index) => (
+            <img key={`one-${src}-${index}`} src={src} alt="" />
+          ))}
+        </div>
+        <div className="living-track living-track-two">
+          {[...backgroundScenes.slice().reverse(), ...backgroundScenes.slice().reverse()].map((src, index) => (
+            <img key={`two-${src}-${index}`} src={src} alt="" />
+          ))}
         </div>
       </div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(69,238,255,0.40),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.92),transparent_25%),linear-gradient(115deg,rgba(238,253,255,0.98)_0%,rgba(255,255,255,0.88)_42%,rgba(69,238,255,0.34)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(255,255,255,0.94),rgba(238,253,255,0.78)_48%,rgba(69,238,255,0.28)_100%)]" />
+      <div className="aurora-field absolute inset-0 -z-10 opacity-45 mix-blend-multiply" />
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.20] [background-image:linear-gradient(rgba(8,174,202,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(8,174,202,0.12)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
-        <div className="font-mono text-[10px] uppercase tracking-[2px] text-[var(--text-dim)]">Scroll</div>
-        <div className="h-11 w-px animate-[float_2s_ease-in-out_infinite] bg-[linear-gradient(to_bottom,var(--cyan),transparent)]" />
+      <div className="app-container relative z-[2] pb-20 lg:pb-24">
+        <div className="grid min-h-[calc(100vh-150px)] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="max-w-[660px]">
+            <div className="animate-[fadeInUp_0.8s_ease_0.05s_both] mb-5 inline-flex items-center gap-2 rounded-full border border-[rgba(69,238,255,0.38)] bg-white/74 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[2.7px] text-[var(--cyan-deep)] shadow-[0_18px_44px_rgba(69,238,255,0.18)] backdrop-blur-2xl">
+              <span className="relative h-2 w-2 rounded-full bg-[#45eeff] shadow-[0_0_18px_rgba(69,238,255,0.95)]">
+                <span className="absolute inset-0 animate-ping rounded-full bg-[#45eeff]" />
+              </span>
+              VimlaJi is moving into the app era
+            </div>
+
+            <h1 className="animate-[fadeInUp_0.9s_ease_0.14s_both] font-display text-[clamp(3.45rem,8.4vw,7.85rem)] font-black leading-[0.86] tracking-[-2.8px] text-[#082f38] drop-shadow-[0_18px_54px_rgba(69,238,255,0.18)]">
+              Your home,
+              <span className="block bg-[linear-gradient(125deg,#082f38_0%,#08aeca_30%,#45eeff_56%,#082f38_100%)] bg-clip-text pb-3 italic text-transparent">
+                handled with Ji.
+              </span>
+            </h1>
+
+            <p className="animate-[fadeInUp_0.9s_ease_0.28s_both] mt-5 max-w-[580px] font-body text-[17px] font-light leading-[1.9] text-[#477783] sm:text-[19px]">
+              Book trusted hourly househelp, laundry, utensils, cleaning, and cooking support from a calm, premium app built around real homes and real daily routines.
+            </p>
+
+            <StoreButtons className="animate-[fadeInUp_0.9s_ease_0.42s_both] mt-9" />
+
+            <div className="animate-[fadeInUp_0.9s_ease_0.58s_both] mt-9 grid max-w-[620px] gap-3 sm:grid-cols-3">
+              {liveMoments.map(([time, title, status]) => (
+                <div key={title} className="live-chip">
+                  <span>{time}</span>
+                  <strong>{title}</strong>
+                  <em>{status}</em>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-[690px] animate-[fadeInUp_1s_ease_0.32s_both]">
+            <div className="absolute -left-8 top-8 z-[4] hidden rounded-[28px] border border-white/80 bg-white/76 p-3 shadow-[0_22px_58px_rgba(69,238,255,0.18)] backdrop-blur-2xl sm:block">
+              <img src="/app/brand/vimlaji_text_logo.png" alt="VimlaJi" className="h-10 w-[154px] object-contain" />
+            </div>
+
+            <div className="absolute -right-4 bottom-14 z-[4] hidden max-w-[196px] rounded-[26px] border border-white/80 bg-white/78 p-4 text-[#082f38] shadow-[0_24px_64px_rgba(69,238,255,0.18)] backdrop-blur-2xl sm:block">
+              <div className="mb-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[2px] text-[var(--cyan-deep)]"><span className="h-2 w-2 rounded-full bg-[#45eeff]" />Home care</div>
+              <p className="font-body text-xs font-semibold leading-[1.55] text-[#245d69]">Clean rooms, fresh clothes, warm meals, and help that feels close.</p>
+            </div>
+
+            <div className="hero-device-shell relative rounded-[48px] border border-white/35 bg-white/18 p-3 shadow-[0_44px_120px_rgba(0,0,0,0.36)] backdrop-blur-2xl sm:p-4">
+              <div className="relative overflow-hidden rounded-[36px] border border-white/25 bg-[#eefdff]">
+                <div className="flex animate-hero-pan">
+                  {heroSlides.map((src) => (
+                    <img key={src} src={src} alt="VimlaJi app visual" className="h-[340px] min-w-full object-cover object-center sm:h-[500px] lg:h-[550px]" />
+                  ))}
+                </div>
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.10),transparent_34%,rgba(69,238,255,0.08))]" />
+              </div>
+            </div>
+
+            <div className="floating-service-orbit pointer-events-none absolute inset-0 z-[5]">
+              <div className="orbit-card orbit-card-one"><img src="/app/services/sweeping_mopping.png" alt="" /><span>Sweeping</span></div>
+              <div className="orbit-card orbit-card-two"><img src="/app/services/cooking_services.png" alt="" /><span>Cooking</span></div>
+              <div className="orbit-card orbit-card-three"><img src="/app/services/washing_clothes.png" alt="" /><span>Laundry</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

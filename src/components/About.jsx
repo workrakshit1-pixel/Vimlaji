@@ -1,104 +1,54 @@
+const promises = [
+  ['Homes feel lighter', 'Daily chores are handled with care, timing, and a respectful helper experience.'],
+  ['Services feel clear', 'Every task has simple expectations, real service visuals, and practical timings.'],
+  ['Support feels close', 'VimlaJi stays reachable for customers, helpers, and every home we serve.'],
+]
+
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-white py-[90px] lg:py-[120px]">
-      <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] bg-[radial-gradient(circle_at_top_right,rgba(0,184,204,0.07)_0%,transparent_65%)]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[400px] bg-[radial-gradient(circle_at_bottom_left,rgba(0,200,220,0.05)_0%,transparent_65%)]" />
+    <section className="relative overflow-hidden bg-[#f8feff] py-[90px] lg:py-[124px]">
+      <div className="home-scene-bg absolute inset-0 opacity-80" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,254,255,0.92),rgba(255,255,255,0.76)_48%,rgba(238,253,255,0.96))]" />
 
       <div className="app-container relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="reveal relative mx-auto w-full max-w-[540px]">
-            <div className="relative overflow-hidden rounded-3xl border border-[rgba(0,184,204,0.2)] bg-[linear-gradient(135deg,rgba(0,184,204,0.08)_0%,rgba(0,152,170,0.04)_100%)] p-8 sm:p-10 lg:p-12">
-              <div className="absolute right-0 top-0 h-[120px] w-[120px] bg-[radial-gradient(circle_at_top_right,rgba(0,184,204,0.12),transparent_70%)]" />
-
-              <svg width="68" height="68" viewBox="0 0 72 72" fill="none" className="mb-7">
-                <rect
-                  width="72"
-                  height="72"
-                  rx="18"
-                  fill="rgba(0,184,204,0.1)"
-                  stroke="rgba(0,184,204,0.3)"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M36 14L56 30V56H46V42H26V56H16V30L36 14Z"
-                  fill="none"
-                  stroke="#00b8cc"
-                  strokeWidth="2.5"
-                  strokeLinejoin="round"
-                />
-                <circle cx="36" cy="38" r="5" fill="#00b8cc" opacity="0.9" />
-                <path
-                  d="M36 26V22M36 54V50M24 38H20M52 38H48"
-                  stroke="#00b8cc"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  opacity="0.4"
-                />
-              </svg>
-
-              <div className="mb-1.5 font-display text-[36px] font-black leading-none text-[#0d3d47]">
-                VimlaJi
-              </div>
-              <div className="mb-7 font-mono text-[10px] uppercase tracking-[3px] text-[var(--cyan)]">
-                Househelp Services
-              </div>
-              <div className="mb-7 h-px bg-[linear-gradient(90deg,var(--cyan),transparent)] opacity-30" />
-
-              {['Trained Professionals', 'Background Verified', 'Insured Services', 'Instant Booking'].map(
-                (feature) => (
-                  <div key={feature} className="mb-[14px] flex items-center gap-2.5">
-                    <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-[rgba(0,184,204,0.3)] bg-[rgba(0,184,204,0.12)]">
-                      <div className="h-1.5 w-1.5 rounded-full bg-[var(--cyan)]" />
-                    </div>
-                    <span className="font-body text-sm text-[var(--text-muted)]">{feature}</span>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:gap-20">
+          <div className="reveal relative mx-auto w-full max-w-[650px]">
+            <div className="reality-window relative overflow-hidden rounded-[46px] border border-white/80 bg-white/50 p-3 shadow-[0_34px_98px_rgba(10,53,64,0.13)] backdrop-blur-xl">
+              <div className="grid gap-3 sm:grid-cols-2">
+                {['/app/services/sweeping_mopping.png', '/app/services/utensils.png', '/app/services/cooking_services.png', '/app/services/general_homehelp.png'].map((src, index) => (
+                  <div key={src} className={`reality-tile ${index === 1 ? 'translate-y-7' : ''} ${index === 2 ? '-translate-y-5' : ''}`}>
+                    <img src={src} alt="VimlaJi service moment" />
                   </div>
-                ),
-              )}
-            </div>
-
-            <div className="animate-float absolute -bottom-4 -right-2 rounded-2xl bg-[linear-gradient(135deg,#00b8cc,#0099aa)] px-4 py-3 shadow-[0_8px_32px_rgba(0,184,204,0.35)] sm:-bottom-5 sm:-right-5 sm:px-[22px] sm:py-4">
-              <div className="font-display text-2xl font-black leading-none text-white sm:text-[28px]">30</div>
-              <div className="mt-1 font-mono text-[9px] uppercase leading-[1.4] tracking-[1.5px] text-[rgba(255,255,255,0.8)]">
-                Min Avg.
-                <br />
-                Arrival
+                ))}
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 rounded-[30px] border border-white/80 bg-white/88 p-5 shadow-[0_20px_56px_rgba(10,53,64,0.20)] backdrop-blur-2xl">
+                <img src="/app/brand/vimlaji_text_logo.png" alt="VimlaJi" className="mb-3 h-10 w-[160px] object-contain object-left" />
+                <p className="font-body text-sm font-bold leading-[1.7] text-[#245d69]">Daily home support with trust, clarity, and a little more peace.</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="reveal mb-[18px] font-mono text-[11px] uppercase tracking-[3px] text-[var(--cyan)]">
-              About Vimlaji
-            </div>
-
-            <h2 className="reveal reveal-delay-1 mb-6 font-display text-[clamp(2rem,3.5vw,3rem)] font-black leading-[1.12] tracking-[-0.5px] text-[#0d3d47]">
-              Because your home
-              <br />
-              deserves more than
-              <br />
-              <span className="bg-[linear-gradient(135deg,#00b8cc,#0077aa)] bg-clip-text italic text-transparent">
-                "theek-thak."
-              </span>
+            <div className="reveal mb-[18px] font-mono text-[11px] uppercase tracking-[3px] text-[var(--cyan-deep)]">About VimlaJi</div>
+            <h2 className="reveal reveal-delay-1 mb-6 font-display text-[clamp(2.3rem,4.4vw,4.35rem)] font-black leading-[0.98] tracking-[-1px] text-[#082f38]">
+              Househelp that feels clean, calm, and dependable.
             </h2>
-
-            <p className="reveal reveal-delay-2 mb-[18px] font-body text-base font-light leading-[1.8] text-[var(--text-muted)]">
-              Vimlaji was built on one simple belief - every household deserves professional,
-              reliable, and affordable help. We match you with trained, background-verified
-              house-help professionals who arrive at your doorstep within minutes of booking.
+            <p className="reveal reveal-delay-2 mb-8 max-w-[620px] font-body text-[17px] font-light leading-[1.9] text-[#477783]">
+              VimlaJi brings hourly househelp, laundry, utensils, cleaning, and homestyle cooking support into one premium everyday service for modern homes.
             </p>
 
-            <p className="reveal reveal-delay-3 mb-9 font-body text-base font-light leading-[1.8] text-[var(--text-muted)]">
-              No more waiting days. No more unreliable help. Just book on WhatsApp, and we handle
-              the rest - from sweeping to dish washing, laundry to deep cleaning.
-            </p>
-
-            <div className="reveal reveal-delay-4 border-l-2 border-[var(--cyan)] pl-6">
-              <p className="font-display text-lg italic leading-[1.6] text-[#2a7080]">
-                "Trained help. Honest pricing. At your door in minutes."
-              </p>
-              <div className="mt-2.5 font-mono text-[11px] uppercase tracking-[2px] text-[var(--text-dim)]">
-                - The VimlaJi Promise
-              </div>
+            <div className="grid gap-4">
+              {promises.map(([title, desc], index) => (
+                <div key={title} className={`reveal reveal-delay-${index + 3} living-point group rounded-[30px] border border-[rgba(69,238,255,0.28)] bg-white/86 p-5 shadow-[0_18px_52px_rgba(10,53,64,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[rgba(69,238,255,0.62)] hover:shadow-[0_26px_70px_rgba(69,238,255,0.16)]`}>
+                  <div className="flex gap-4">
+                    <div className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-2xl bg-[linear-gradient(135deg,#45eeff,#08aeca)] font-display text-lg font-black text-[#07313b] shadow-[0_12px_30px_rgba(69,238,255,0.28)]">{index + 1}</div>
+                    <div>
+                      <h3 className="font-display text-xl font-black text-[#082f38]">{title}</h3>
+                      <p className="mt-1 font-body text-sm font-light leading-[1.7] text-[#477783]">{desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import StoreButtons from './StoreButtons.jsx'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -31,45 +32,32 @@ export default function Navbar() {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'How to Book', href: '#how-to-book' },
+    { label: 'Download App', href: '#download' },
+    { label: 'Join as Helper', href: '#join-helper' },
     { label: "FAQ's", href: '#faqs' },
   ]
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[500] border-b border-[rgba(0,184,204,0.22)] px-4 transition-all duration-300 sm:px-6 lg:px-7 ${
+      className={`fixed left-0 right-0 top-0 z-[500] border-b border-[rgba(255,255,255,0.35)] px-4 transition-all duration-300 sm:px-6 lg:px-7 ${
         scrolled
-          ? 'bg-[rgba(255,255,255,0.97)] shadow-[0_3px_32px_rgba(0,184,204,0.14),0_1px_0_rgba(0,184,204,0.08)]'
-          : 'bg-[rgba(225,248,252,0.85)] shadow-[0_2px_20px_rgba(0,184,204,0.1)]'
-      } backdrop-blur-[18px]`}
+          ? 'bg-[rgba(69,238,255,0.96)] shadow-[0_14px_44px_rgba(10,53,64,0.11)]'
+          : 'bg-[rgba(69,238,255,0.94)] shadow-[0_10px_34px_rgba(69,238,255,0.22)]'
+      } backdrop-blur-[20px]`}
     >
       <div className="app-container relative" ref={mobileMenuRef}>
-        <div className="flex h-[66px] items-center justify-between sm:h-[70px]">
-          <a href="#" className="flex items-center gap-[11px]">
+        <div className="flex h-[68px] items-center justify-between sm:h-[74px]">
+          <a href="#" className="flex items-center gap-[11px]" aria-label="VimlaJi home">
             <img
-              src="/logo.jpg"
-              alt="VimlaJi Logo"
-              width="40"
-              height="40"
-              className="h-10 w-10 rounded-lg object-contain"
+              src="/app/brand/vimlaji_text_logo.png"
+              alt="VimlaJi"
+              className="h-9 w-[112px] object-contain object-left"
               onError={(e) => {
                 e.currentTarget.style.display = 'none'
-                e.currentTarget.nextSibling.style.display = 'flex'
+                e.currentTarget.nextSibling.style.display = 'block'
               }}
             />
-            <div className="hidden h-10 w-10 items-center justify-center rounded-[10px] border-[1.5px] border-[rgba(0,184,204,0.4)] bg-[rgba(0,184,204,0.12)]">
-              <svg width="22" height="22" viewBox="0 0 38 38" fill="none">
-                <path
-                  d="M19 5L33 16V33H25V24H13V33H5V16L19 5Z"
-                  fill="none"
-                  stroke="#00b8cc"
-                  strokeWidth="2.2"
-                  strokeLinejoin="round"
-                />
-                <circle cx="19" cy="21" r="3" fill="#00b8cc" />
-              </svg>
-            </div>
-            <span className="font-display text-[22px] font-black leading-none tracking-[-0.5px] text-[#0a3540] sm:text-2xl">
+            <span className="hidden font-display text-[24px] font-black leading-none tracking-[-0.6px] text-[#0a3540] sm:text-[26px]">
               VimlaJi
             </span>
           </a>
@@ -79,7 +67,7 @@ export default function Navbar() {
               <a
                 key={label}
                 href={href}
-                className="font-body text-[14.5px] font-medium tracking-[0.1px] text-[var(--text-muted)] transition-colors hover:text-[var(--cyan-dark)]"
+                className="font-body text-[14.5px] font-semibold tracking-[0.1px] text-[#07313b] transition-colors hover:text-white"
               >
                 {label}
               </a>
@@ -88,12 +76,10 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://wa.me/917973626242?text=Hi%20VimlaJi%2C%20I%20want%20to%20book%20a%20service"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body rounded-full bg-[linear-gradient(135deg,#00b8cc,#0092a8)] px-4 py-[9px] text-xs font-bold tracking-[0.2px] text-white shadow-[0_4px_18px_rgba(0,184,204,0.35)] transition-all duration-300 hover:-translate-y-[1px] hover:shadow-[0_8px_28px_rgba(0,184,204,0.5)] sm:px-[26px] sm:py-[10px] sm:text-sm"
+              href="#download"
+              className="rounded-full bg-white px-4 py-[9px] font-body text-xs font-black tracking-[0.2px] text-[#07313b] shadow-[0_8px_26px_rgba(10,53,64,0.16)] transition-all duration-300 hover:-translate-y-[1px] hover:bg-[#07313b] hover:text-white sm:px-[24px] sm:py-[10px] sm:text-sm"
             >
-              Book Now →
+              Download
             </a>
 
             <button
@@ -102,24 +88,12 @@ export default function Navbar() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               aria-label="Toggle menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[rgba(0,184,204,0.25)] bg-white/70 text-[#0a3540] transition-colors hover:bg-[rgba(0,184,204,0.1)] md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/45 bg-white/40 text-[#07313b] transition-colors hover:bg-white/70 md:hidden"
             >
               <span className="relative block h-[14px] w-[16px]">
-                <span
-                  className={`absolute left-0 top-0 h-[2px] w-full rounded bg-current transition-all ${
-                    mobileOpen ? 'top-[6px] rotate-45' : ''
-                  }`}
-                />
-                <span
-                  className={`absolute left-0 top-[6px] h-[2px] w-full rounded bg-current transition-opacity ${
-                    mobileOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
-                />
-                <span
-                  className={`absolute left-0 top-3 h-[2px] w-full rounded bg-current transition-all ${
-                    mobileOpen ? 'top-[6px] -rotate-45' : ''
-                  }`}
-                />
+                <span className={`absolute left-0 top-0 h-[2px] w-full rounded bg-current transition-all ${mobileOpen ? 'top-[6px] rotate-45' : ''}`} />
+                <span className={`absolute left-0 top-[6px] h-[2px] w-full rounded bg-current transition-opacity ${mobileOpen ? 'opacity-0' : 'opacity-100'}`} />
+                <span className={`absolute left-0 top-3 h-[2px] w-full rounded bg-current transition-all ${mobileOpen ? 'top-[6px] -rotate-45' : ''}`} />
               </span>
             </button>
           </div>
@@ -128,20 +102,21 @@ export default function Navbar() {
         <div
           id="mobile-nav"
           className={`overflow-hidden transition-all duration-300 md:hidden ${
-            mobileOpen ? 'max-h-[360px] pb-4 opacity-100' : 'max-h-0 pb-0 opacity-0'
+            mobileOpen ? 'max-h-[440px] pb-4 opacity-100' : 'max-h-0 pb-0 opacity-0'
           }`}
         >
-          <div className="rounded-2xl border border-[rgba(0,184,204,0.2)] bg-[rgba(255,255,255,0.96)] p-3 shadow-[0_12px_32px_rgba(0,184,204,0.14)] backdrop-blur-md">
+          <div className="rounded-3xl border border-[rgba(69,238,255,0.28)] bg-[rgba(255,255,255,0.97)] p-3 shadow-[0_18px_44px_rgba(10,53,64,0.12)] backdrop-blur-md">
             {navLinks.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className="block rounded-xl px-3 py-2 font-body text-[15px] font-medium text-[var(--text-muted)] transition-colors hover:bg-[rgba(0,184,204,0.08)] hover:text-[var(--cyan-dark)]"
+                className="block rounded-2xl px-3 py-2.5 font-body text-[15px] font-semibold text-[var(--text-muted)] transition-colors hover:bg-[rgba(69,238,255,0.11)] hover:text-[var(--cyan-deep)]"
               >
                 {label}
               </a>
             ))}
+            <StoreButtons compact className="mt-3" />
           </div>
         </div>
       </div>
