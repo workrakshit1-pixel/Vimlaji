@@ -41,12 +41,15 @@ export default function Footer() {
           <div>
             <div className="mb-5 font-mono text-[10px] font-semibold uppercase tracking-[2.5px] text-[var(--cyan-deep)]">Quick Links</div>
             {[
-              { label: 'About VimlaJi', href: '#about' },
-              { label: 'Services', href: '#services' },
-              { label: 'Download App', href: '#download' },
-              { label: 'Join as Helper', href: '#join-helper' },
-              { label: "FAQ's", href: '#faqs' },
-              { label: 'Instagram', href: 'https://www.instagram.com/vimlaji.official/' },
+              { label: 'Home', href: '/' },
+              { label: 'About VimlaJi', href: '/about' },
+              { label: 'Services', href: '/services' },
+              { label: 'Download App', href: '/download-app' },
+              { label: 'Join as Helper', href: '/join-helper' },
+              { label: 'Customer Feedback', href: '/feedback' },
+              { label: "FAQ's", href: '/faq' },
+              { label: 'Contact Us', href: '/contact-us' },
+              { label: 'Instagram', href: 'https://www.instagram.com/vimlaji.in/' },
             ].map(({ label, href }) => (
               <a key={label} href={href} className="mb-[11px] flex items-center gap-2 font-body text-sm font-semibold text-[var(--text-muted)] transition-colors hover:text-[var(--cyan-deep)]">
                 <div className="h-1.5 w-1.5 rounded-full bg-[#45eeff]" />
@@ -89,6 +92,7 @@ export default function Footer() {
             {[
               { label: 'Privacy Policy', href: '/privacy-policy' },
               { label: 'Terms', href: '/terms-and-conditions' },
+              { label: 'Contact', href: '/contact-us' },
             ].map(({ label, href }) => (
               <a key={label} href={href} className="font-mono text-[11px] text-[var(--text-dim)] transition-colors hover:text-[var(--cyan-deep)]">{label}</a>
             ))}

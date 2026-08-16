@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import StoreButtons from './StoreButtons.jsx'
 
-export default function Navbar() {
+export default function Navbar({ activePage = 'home' }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const mobileMenuRef = useRef(null)
@@ -30,11 +30,12 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Download App', href: '#download' },
-    { label: 'Join as Helper', href: '#join-helper' },
-    { label: "FAQ's", href: '#faqs' },
+    { label: 'About', href: '/about', page: 'about' },
+    { label: 'Services', href: '/services', page: 'services' },
+    { label: 'Download App', href: '/download-app', page: 'download' },
+    { label: 'Join as Helper', href: '/join-helper', page: 'helper' },
+    { label: "FAQ's", href: '/faq', page: 'faq' },
+    { label: 'Contact', href: '/contact-us', page: 'contact' },
   ]
 
   return (
@@ -47,7 +48,7 @@ export default function Navbar() {
     >
       <div className="app-container relative" ref={mobileMenuRef}>
         <div className="flex h-[68px] items-center justify-between sm:h-[74px]">
-          <a href="#" className="flex items-center gap-[11px]" aria-label="VimlaJi home">
+          <a href="/" className="flex items-center gap-[11px]" aria-label="VimlaJi home">
             <img
               src="/app/brand/vimlaji_text_logo.png"
               alt="VimlaJi"
@@ -63,11 +64,11 @@ export default function Navbar() {
           </a>
 
           <div className="hidden items-center gap-[34px] md:flex">
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ label, href, page }) => (
               <a
                 key={label}
                 href={href}
-                className="font-body text-[14.5px] font-semibold tracking-[0.1px] text-[#07313b] transition-colors hover:text-white"
+                className={`font-body text-[14.5px] font-semibold tracking-[0.1px] transition-colors hover:text-white ${activePage === page ? 'text-white' : 'text-[#07313b]'}`}
               >
                 {label}
               </a>
@@ -76,7 +77,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="#download"
+              href="/download-app"
               className="rounded-full bg-white px-4 py-[9px] font-body text-xs font-black tracking-[0.2px] text-[#07313b] shadow-[0_8px_26px_rgba(10,53,64,0.16)] transition-all duration-300 hover:-translate-y-[1px] hover:bg-[#07313b] hover:text-white sm:px-[24px] sm:py-[10px] sm:text-sm"
             >
               Download
@@ -106,12 +107,12 @@ export default function Navbar() {
           }`}
         >
           <div className="rounded-3xl border border-[rgba(69,238,255,0.28)] bg-[rgba(255,255,255,0.97)] p-3 shadow-[0_18px_44px_rgba(10,53,64,0.12)] backdrop-blur-md">
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ label, href, page }) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className="block rounded-2xl px-3 py-2.5 font-body text-[15px] font-semibold text-[var(--text-muted)] transition-colors hover:bg-[rgba(69,238,255,0.11)] hover:text-[var(--cyan-deep)]"
+                className={`block rounded-2xl px-3 py-2.5 font-body text-[15px] font-semibold transition-colors hover:bg-[rgba(69,238,255,0.11)] hover:text-[var(--cyan-deep)] ${activePage === page ? 'bg-[rgba(69,238,255,0.14)] text-[var(--cyan-deep)]' : 'text-[var(--text-muted)]'}`}
               >
                 {label}
               </a>

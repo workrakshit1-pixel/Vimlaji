@@ -1,51 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="Download VimlaJi app for househelp. Book verified helpers for sweeping, mopping, utensils, laundry, dusting, kitchen help, and general home help." />
-    <meta name="keywords" content="VimlaJi, VimlaJi app, househelp Pathankot, hourly househelp, home cleaning Pathankot, maid service Pathankot, sweeping mopping, laundry help, utensils cleanin, verified helpers" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="description" content="Download VimlaJi to book home help, cleaning, laundry, utensils, kitchen help, and cooking services in Pathankot." />
+    <meta name="keywords" content="VimlaJi, VimlaJi app, househelp Pathankot, home help Pathankot, home cleaning Pathankot, maid service Pathankot, hourly househelp, laundry help Pathankot, utensils cleaning, cooking service Pathankot" />
+    <meta name="theme-color" content="#45eeff" />
+    <meta name="author" content="VimlaJi" />
     <link rel="canonical" href="https://vimlaji.com/" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    <meta property="og:title" content="VimlaJi - Househelp in Minutes" />
-    <meta property="og:description" content="Book hourly house help through the VimlaJi app." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VimlaJi" />
+    <meta property="og:title" content="VimlaJi | Home Help, Cleaning, Laundry & Cooking in Pathankot" />
+    <meta property="og:description" content="Book home help, cleaning, laundry, utensils, kitchen help, and cooking services through the VimlaJi app." />
+    <meta property="og:url" content="https://vimlaji.com/" />
     <meta property="og:image" content="https://vimlaji.com/logo.png" />
+    <meta property="og:locale" content="en_IN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VimlaJi | Home Help, Cleaning, Laundry & Cooking in Pathankot" />
+    <meta name="twitter:description" content="Book home help, cleaning, laundry, utensils, kitchen help, and cooking services through the VimlaJi app." />
     <meta name="twitter:image" content="https://vimlaji.com/logo.png" />
-    <title>VimlaJi - Househelp in Minutes</title>
+
+    <title>VimlaJi | Home Help, Cleaning, Laundry & Cooking in Pathankot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
     <script type="application/ld+json">
-[
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "VimlaJi",
-          "url": "https://vimlaji.com",
-          "logo": "https://vimlaji.com/logo.png",
-          "sameAs": ["https://www.instagram.com/vimlaji.in/"],
-          "downloadUrl": [
-                          "https://play.google.com/store/apps/details?id=com.vimlaji.app",
-                          "https://apps.apple.com/us/app/vimlaji/id6788829257"]
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "VimlaJi",
-          "url": "https://vimlaji.com"
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "SiteNavigationElement",
-          "name": ["Services", "Download App", "Customer Feedback", "FAQ", "Privacy Policy", "Terms and Conditions"],
-          "url": ["https://vimlaji.com/#services", "https://vimlaji.com/#download", "https://vimlaji.com/#feedback", "https://vimlaji.com/#faqs", "https://vimlaji.com/privacy-policy", "https://vimlaji.com/terms-and-conditions"]
-        }
-      ]
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://vimlaji.com/#organization",
+            "name": "VimlaJi",
+            "url": "https://vimlaji.com/",
+            "logo": "https://vimlaji.com/logo.png",
+            "sameAs": ["https://www.instagram.com/vimlaji.in/"],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-7973736177",
+                "contactType": "customer support",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi", "Punjabi"]
+              }
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://vimlaji.com/#localbusiness",
+            "name": "VimlaJi",
+            "url": "https://vimlaji.com/",
+            "image": "https://vimlaji.com/logo.png",
+            "telephone": "+91-7973736177",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Pathankot",
+              "addressRegion": "Punjab",
+              "addressCountry": "IN"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Pathankot"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://vimlaji.com/#website",
+            "name": "VimlaJi",
+            "url": "https://vimlaji.com/",
+            "publisher": { "@id": "https://vimlaji.com/#organization" }
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "VimlaJi",
+            "operatingSystem": "Android, iOS",
+            "applicationCategory": "LifestyleApplication",
+            "downloadUrl": [
+              "https://play.google.com/store/apps/details?id=com.vimlaji.app",
+              "https://apps.apple.com/us/app/vimlaji/id6788829257"
+            ],
+            "publisher": { "@id": "https://vimlaji.com/#organization" }
+          },
+          {
+            "@type": "ItemList",
+            "name": "VimlaJi website pages",
+            "itemListElement": [
+              { "@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://vimlaji.com/" },
+              { "@type": "SiteNavigationElement", "position": 2, "name": "About", "url": "https://vimlaji.com/about" },
+              { "@type": "SiteNavigationElement", "position": 3, "name": "Services", "url": "https://vimlaji.com/services" },
+              { "@type": "SiteNavigationElement", "position": 4, "name": "Download App", "url": "https://vimlaji.com/download-app" },
+              { "@type": "SiteNavigationElement", "position": 5, "name": "Join as Helper", "url": "https://vimlaji.com/join-helper" },
+              { "@type": "SiteNavigationElement", "position": 6, "name": "Customer Feedback", "url": "https://vimlaji.com/feedback" },
+              { "@type": "SiteNavigationElement", "position": 7, "name": "FAQ", "url": "https://vimlaji.com/faq" },
+              { "@type": "SiteNavigationElement", "position": 8, "name": "Contact Us", "url": "https://vimlaji.com/contact-us" },
+              { "@type": "SiteNavigationElement", "position": 9, "name": "Privacy Policy", "url": "https://vimlaji.com/privacy-policy" },
+              { "@type": "SiteNavigationElement", "position": 10, "name": "Terms and Conditions", "url": "https://vimlaji.com/terms-and-conditions" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where is VimlaJi available?",
+                "acceptedAnswer": { "@type": "Answer", "text": "VimlaJi is currently available in Pathankot, Punjab." }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I book VimlaJi services?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Download the VimlaJi app, choose a service or slot, add your address, and complete payment securely." }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I contact VimlaJi support?",
+                "acceptedAnswer": { "@type": "Answer", "text": "You can call VimlaJi support at +91 7973736177 or email vimlaji.official@gmail.com." }
+              }
+            ]
+          }
+        ]
+      }
     </script>
   </head>
   <body>
+    <noscript>
+      <nav aria-label="VimlaJi pages">
+        <a href="/">Home</a>
+        <a href="/about">About VimlaJi</a>
+        <a href="/services">Services</a>
+        <a href="/download-app">Download App</a>
+        <a href="/join-helper">Join as Helper</a>
+        <a href="/feedback">Customer Feedback</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-and-conditions">Terms and Conditions</a>
+      </nav>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
